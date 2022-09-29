@@ -1,0 +1,68 @@
+h1 {
+    font-family: "Monospace";
+    font-style: italic;
+  }
+
+.header{
+  background-color: #26d0c9;
+  color: #fff;
+  height:90px;
+}
+
+/* Gantikan background-color main ke #bdf7f1, dan height ke 600px */
+.main{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/* Gantikan background-color footer ke #ceccf3, dan height ke 270px */
+.footer{
+  background-color: #2f5167;
+  color:#fff;
+  height:270px;
+}
+
+.header-user{
+  padding: 35px 20px;
+  float:left;
+  font-size: 18px;
+}
+
+.header-button{
+  padding: 35px 20px;
+  float:right;
+}
+
+.footer-watermark{
+  padding: 20px;
+}
+
+.footer-watermark h2{
+  font-family:'Courier New', Courier, monospace;
+}
+
+.footer-watermark p{
+  font-family:'Courier New', Courier, monospace;
+  
+}
+
+.main-intro h1{
+  font-size: 80px;
+  padding: 0;
+  margin: 0%;
+}
+
+.main-intro h2{
+  color: red;
+  font-size: 100px;
+  padding: 0px;
+  border-bottom:3px solid black;
+  margin: 0%;
+}
+
+.main-table{
+  padding: 100px;
+  width: 100%;
+}

@@ -1,28 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>
-    <h5>Nama: {{nama}}</h5>
-</p>
+<div class="header">
+    <div class="header-user">Who's logged in: {{ user }}</div>
+    
+    <div class="header-button">
+        <button><a href="{% url 'wishlist:logout' %}">Logout</a></button>  
+    </div>
+</div>
 
-<table>
-    <tr>
-    <th>Nama Barang</th>
-    <th>Harga Barang</th>
-    <th>Deskripsi</th>
-    </tr>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-    {% for barang in list_barang %}
-    <tr>
-        <th>{{barang.nama_barang}}</th>
-        <th>{{barang.harga_barang}}</th>
-        <th>{{barang.deskripsi}}</th>
-    </tr>
-    {% endfor %}
-</table>
+<div class="main">
+    <div class="main-intro">
+        <h1>Nama:</h1>
+        <h2>{{nama}}</h2>    
+    </div>
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+    <div class="main-table">
+        <table>
+            <tr>
+                
+            <th>Nama Barang</th>
+            <th>Harga Barang</th>
+            <th>Deskripsi</th>
+            </tr>
+            {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+            {% for barang in list_barang %}
+            <tr>
+                <th>{{barang.nama_barang}}</th>
+                <th>{{barang.harga_barang}}</th>
+                <th>{{barang.deskripsi}}</th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+</div>
 
-<button><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+<div class="footer">
+    <div class="footer-watermark">
+        <h2>by navisraditya</h2>
+        <p><b>NPM : 2106717291</b></p>
+    </div>
+</div>
+
 
 {% endblock content %}

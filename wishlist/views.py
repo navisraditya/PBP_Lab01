@@ -1,13 +1,9 @@
 import datetime
-from multiprocessing import context
-from urllib import response
 from wishlist.models import BarangWishlist
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.core import serializers
-from django.shortcuts import render
-from django.shortcuts import redirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
