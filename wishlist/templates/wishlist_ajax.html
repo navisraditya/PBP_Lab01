@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="header">
+    <div class="header-user">Who's logged in: {{ user }}</div>
+    
+    <div class="header-button">
+        <button><a href="{% url 'wishlist:logout' %}">Logout</a></button>  
+    </div>
+</div>
+
+<div class="main">
+    <div class="main-intro">
+        <h1>Nama:</h1>
+        <h2>{{nama}}</h2>    
+    </div>
+
+    <div class="main-table">
+        <table>
+            <tr>
+                
+            <th>Nama Barang</th>
+            <th>Harga Barang</th>
+            <th>Deskripsi</th>
+            </tr>
+            {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+        </table>
+    </div>
+
+    <button>Get Barang</button>
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+</div>
+
+<div class="footer">
+    <div class="footer-watermark">
+        <h2>by navisraditya</h2>
+        <p><b>NPM : 2106717291</b></p>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $.get("../json/", function(data){
+                        var barang = '';
+                    $.each(data, function(key, value){
+                        barang += '<tr>';
+                        barang += '<td>'+value.fields.nama_barang;
+                        barang += '<td>'+value.fields.harga_barang;
+                        barang += '<td>'+value.fields.deskripsi;
+                        barang += '</tr>';
+                    });
+                    $('main-table').append(barang);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
